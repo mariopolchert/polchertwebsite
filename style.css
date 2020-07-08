@@ -1,0 +1,144 @@
+body,
+html {
+    height: 100vh;
+    width: 100vw;
+    font-size: calc(1em + 1vw);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    overflow: hidden;
+    font-family: "Roboto Condensed", sans-serif;
+    color: whitesmoke;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas:
+        "header header"
+        "picture section"
+        "footer footer";
+}
+
+#bVideo {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+header {
+    grid-area: header;
+    text-align: center;
+}
+
+picture {
+    grid-area: picture;
+    position: relative;
+    text-align: right;
+}
+
+#myPicture {
+    border-radius: 50%;
+    width: 8em;
+    margin: 2em 1em 2em auto;
+}
+
+section {
+    grid-area: section;
+    position: relative;
+    text-align: left;
+    line-height: 1.2em;
+    top: 4em;
+}
+
+.emph {
+    color: peru;
+    text-decoration: underline;
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
+footer {
+    grid-area: footer;
+    position: relative;
+    text-align: center;
+    cursor: auto;
+}
+
+a {
+    display: inline-block;
+    cursor: initial;
+}
+
+a img {
+    opacity: 0.5;
+    cursor: none;
+    margin: 0 1.1em;
+    padding-bottom: 3em;
+}
+
+.active {
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+    opacity: 1;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+    #myPicture {
+        width: 6em;
+    }
+    section {
+        font-size: 0.6em;
+    }
+}
+
+@media only screen and (max-width: 599px), (orientation: "portrait") {
+    body {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 2fr 1fr;
+        grid-template-areas:
+            "header"
+            "picture"
+            "section"
+            "footer";
+        align-items: center;
+        justify-content: center;
+    }
+
+    header {
+        text-align: center;
+    }
+
+    picture {
+        text-align: center;
+    }
+
+    #myPicture {
+        margin: 0;
+        width: 10em;
+        justify-self: auto;
+    }
+
+    section {
+        text-align: center;
+        line-height: 1.3em;
+        top: 0;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(1em, 3em));
+        justify-content: center;
+    }
+
+    footer img {
+        margin: 0;
+    }
+}
