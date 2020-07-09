@@ -2,7 +2,7 @@ body,
 html {
     height: 100vh;
     width: 100vw;
-    font-size: calc(1em + 1vw);
+    --fs: calc(1em + 1vw);
 }
 
 body {
@@ -33,6 +33,16 @@ body {
 header {
     grid-area: header;
     text-align: center;
+    font-size: calc(var(--fs) * 1);
+}
+
+#lang {
+    position: absolute;
+    display: block;
+    left: calc(var(--fs) * 0.6);
+    font-size: calc(var(--fs) * 0.6);
+    background-color: black;
+    cursor: pointer;
 }
 
 picture {
@@ -64,8 +74,10 @@ section {
 
 footer {
     grid-area: footer;
+    align-self: center;
+    justify-self: center;
+    grid-template-columns: repeat(5, 1fr);
     position: relative;
-    text-align: center;
     cursor: auto;
 }
 
@@ -77,24 +89,29 @@ a {
 a img {
     opacity: 0.5;
     cursor: none;
-    margin: 0 1.1em;
-    padding-bottom: 3em;
+    width: calc(var(--fs) * 3);
+    padding: 0 calc(var(--fs) * 0.5);
+}
+
+.hide {
+    display: none;
 }
 
 .active {
-    -webkit-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
+    -webkit-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    transform: scale(1.4);
     opacity: 1;
     cursor: pointer;
 }
 
 @media only screen and (min-width: 600px) {
     #myPicture {
-        width: 6em;
+        width: calc(var(--fs) * 10);
     }
     section {
-        font-size: 0.6em;
+        font-size: calc(var(--fs) * 1.1);
+        top: var(--fs);
     }
 }
 
@@ -114,6 +131,7 @@ a img {
 
     header {
         text-align: center;
+        font-size: var(--fs);
     }
 
     picture {
@@ -122,23 +140,13 @@ a img {
 
     #myPicture {
         margin: 0;
-        width: 10em;
-        justify-self: auto;
+        width: calc(var(--fs) * 10);
     }
 
     section {
         text-align: center;
-        line-height: 1.3em;
+        font-size: var(--fs);
+        line-height: calc(var(--fs) * 1.5);
         top: 0;
-    }
-
-    footer {
-        display: grid;
-        grid-template-columns: repeat(5, minmax(1em, 3em));
-        justify-content: center;
-    }
-
-    footer img {
-        margin: 0;
     }
 }

@@ -1,5 +1,9 @@
 const linkImage = document.getElementsByClassName("linkImage");
 
+const lang = document.querySelector("#lang");
+const getEnglishWords = document.querySelectorAll(".en");
+const getCroatianWords = document.querySelectorAll(".hr");
+
 const linkImages = [...linkImage];
 
 linkImages.forEach((item) => {
@@ -13,6 +17,21 @@ function handleMouseOn(event) {
 
 function handleMouseOff(event) {
     event.target.classList.remove("active");
+}
+
+lang.addEventListener("mousedown", handleChangeLanguage);
+
+function handleChangeLanguage(e) {
+    console.log(e.target);
+    getEnglishWords.forEach((el) => {
+        el.classList.toggle("hide");
+    });
+    getCroatianWords.forEach((el) => {
+        el.classList.toggle("hide");
+    });
+    e.target.innerHTML == "HRV"
+        ? (e.target.innerHTML = "ENG")
+        : (e.target.innerHTML = "HRV");
 }
 
 // Cleaning whitespaces
