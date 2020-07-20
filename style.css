@@ -87,7 +87,7 @@ a {
 }
 
 a img {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: none;
     width: calc(var(--fs) * 3);
     padding: 0 calc(var(--fs) * 0.5);
