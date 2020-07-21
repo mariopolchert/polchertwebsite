@@ -105,7 +105,7 @@ a img {
     cursor: pointer;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px), (orientation: "landscape") {
     #myPicture {
         width: calc(var(--fs) * 10);
     }
@@ -115,7 +115,7 @@ a img {
     }
 }
 
-@media only screen and (max-width: 599px), (orientation: "portrait") {
+@media only screen and (max-width: 899px), (orientation: "portrait") {
     body {
         display: grid;
         grid-template-columns: 1fr;
@@ -148,5 +148,10 @@ a img {
         font-size: var(--fs);
         line-height: calc(var(--fs) * 1.5);
         top: 0;
+    }
+
+    footer a img {
+        width: calc(var(--fs) * 2.5);
+        padding: 0 calc(var(--fs) * 0.3);
     }
 }
