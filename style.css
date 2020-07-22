@@ -2,6 +2,8 @@ body,
 html {
     height: 100vh;
     width: 100vw;
+    min-width: 200px;
+    min-height: 300px;
     --fs: calc(1em + 1vw);
 }
 
@@ -153,5 +155,12 @@ a img {
     footer a img {
         width: calc(var(--fs) * 2.5);
         padding: 0 calc(var(--fs) * 0.3);
+    }
+}
+
+@media only screen and (max-height: 500px), (orientation: "portrait") {
+    #myPicture {
+        margin: 0;
+        width: calc(var(--fs) * 6);
     }
 }
