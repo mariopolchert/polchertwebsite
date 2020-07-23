@@ -1,23 +1,6 @@
-const linkImage = document.getElementsByClassName("linkImage");
-
 const lang = document.querySelector("#lang");
 const getEnglishWords = document.querySelectorAll(".en");
 const getCroatianWords = document.querySelectorAll(".hr");
-
-const linkImages = [...linkImage];
-
-linkImages.forEach((item) => {
-    item.addEventListener("mouseenter", handleMouseOn);
-    item.addEventListener("mouseleave", handleMouseOff);
-});
-
-function handleMouseOn(event) {
-    event.target.classList.add("active");
-}
-
-function handleMouseOff(event) {
-    event.target.classList.remove("active");
-}
 
 lang.addEventListener("mousedown", handleChangeLanguage);
 

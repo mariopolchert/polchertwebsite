@@ -43,7 +43,7 @@ header {
     display: block;
     left: calc(var(--fs) * 0.6);
     font-size: calc(var(--fs) * 0.6);
-    background-color: black;
+    filter: black;
     cursor: pointer;
 }
 
@@ -99,9 +99,16 @@ a img {
     display: none;
 }
 
-.active {
+footer a img {
+    transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+footer a img:hover {
+    filter: invert(0.5);
     -webkit-transform: scale(1.4);
     -ms-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -o-transform: scale(1.4);
     transform: scale(1.4);
     opacity: 1;
     cursor: pointer;
